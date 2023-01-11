@@ -2,17 +2,22 @@ import prisma from '../db';
 import { useState, useEffect } from 'react';
 let first = true;
 
+
 export default function HomePage(props) {
   const [currentPassword, setCurrentPassword] = useState(props.currentPassword.password);
   const [currentCallCounter, setCurrentCallCounter] = useState(props.currentCallCounter.counter);
-
+  
+  
   useEffect(() => {
     if (first) {
       first = false;
       return
     }
 
-    window.speechSynthesis.speak(new SpeechSynthesisUtterance(`Número ${currentPassword}`));
+    const voices = window.speechSynthesis.getVoices();
+    let newSpeech = new SpeechSynthesisUtterance(`Número ${currentPassword}`);
+    newSpeech.voice = voices[0];
+    window.speechSynthesis.speak(newSpeech);
   }, [currentPassword, currentCallCounter]);
 
   useEffect(() => {

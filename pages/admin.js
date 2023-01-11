@@ -33,7 +33,10 @@ export default function AdminPage(props) {
       return
     }
 
-    window.speechSynthesis.speak(new SpeechSynthesisUtterance(`Número ${currentPassword}`));
+    const voices = window.speechSynthesis.getVoices();
+    let newSpeech = new SpeechSynthesisUtterance(`Número ${currentPassword}`);
+    newSpeech.voice = voices[0];
+    window.speechSynthesis.speak(newSpeech);
   }, [currentPassword, currentCallCounter]);
 
   const handleChamarProximo = async (n) => {
