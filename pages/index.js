@@ -20,7 +20,7 @@ export default function HomePage(props) {
       const response = await fetch('/api/current');
       const data = await response.json();
       setCurrentPassword(data.id);
-    }, 1500);
+    }, 1000);
 
     return () => clearInterval(passwordSocket);
   }, []);
@@ -30,7 +30,7 @@ export default function HomePage(props) {
       const response = await fetch('/api/counter', { method: "GET" });
       const data = await response.json();
       setCurrentCallCounter(data.counter);
-    }, 1500);
+    }, 1000);
 
     return () => clearInterval(callCurrentSocket);
   }, []);
