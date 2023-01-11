@@ -15,6 +15,13 @@ model Password {
   createdAt DateTime  @default(now())
 }
 
+model TotalPasswords {
+  id        Int      @id @default(1)
+  count     Int      @default(1)
+  createdAt DateTime @default(now())
+  updatedAt DateTime? @updatedAt
+}
+
 model CurrentPassword {
   id        Int       @id @default(1)
   password  Int       @default(1)

@@ -9,13 +9,13 @@ export default function ResetPage() {
       setCurrentPassword(1);
       setTimeout(() => {
         setIsLoading(false);
-      }, 3000);
+      }, 2000);
 
     } catch (error) {
       console.log(error);
       setTimeout(() => {
         setIsLoading(false);
-      }, 3000);
+      }, 2000);
     }
   }
 
@@ -24,7 +24,7 @@ export default function ResetPage() {
       <button
         className="text-white font-bold disabled:bg-red-600 p-2 bg-red-800 rounded hover:bg-red-900 text-1xl hover:text-red-300 w-36"
         onClick={handleReset}
-      >Reiniciar Fila</button>
+      >{isLoading ? "Reiniciando..." : "Reiniciar Fila"}</button>
     </div>
   );
 }

@@ -3,16 +3,20 @@ const prisma = new PrismaClient();
 
 const main = async () => {
   const password = await prisma.password.create({
-    data: {},
+    data: {}
   });
 
   const currentPassword = await prisma.currentPassword.create({
-    data: {}
+    data: { updatedAt: null }
   })
 
   const currentCallCounter = await prisma.counter.create({
-    data: {}
+    data: { updatedAt: null }
   });
+
+  const totalPasswords = await prisma.totalPasswords.create({
+    data: { updatedAt: null }
+  })
 }
 
 main()

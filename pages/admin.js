@@ -50,16 +50,22 @@ export default function AdminPage(props) {
         }),
       });
       const data = await response.json();
+
+      if (data.id === currentPassword) {
+        setIsLoading(false);
+        return
+      }
+
       setCurrentPassword(data.id);
       setTimeout(() => {
         setIsLoading(false);
-      }, 3000);
+      }, 2000);
 
     } catch (error) {
       console.log(error);
       setTimeout(() => {
         setIsLoading(false);
-      }, 3000);
+      }, 2000);
     }
   }
 
@@ -69,19 +75,19 @@ export default function AdminPage(props) {
       const response = await fetch('/api/counter', { method: "POST" });
       setTimeout(() => {
         setIsLoading(false);
-      }, 3000);
+      }, 2000);
 
     } catch (error) {
       console.log(error);
       setTimeout(() => {
         setIsLoading(false);
-      }, 3000);
+      }, 2000);
     }
   }
 
   return (
     <div className="flex flex-col gap-12 m-auto">
-      <div className="m-auto bg-indigo-300 rounded p-8 border border-8 border-indigo-800 text-center text-slate-800 font-bold">
+      <div className="m-auto bg-indigo-300 rounded p-8 border-8 border-indigo-800 text-center text-slate-800 font-bold">
         <p className="text-3xl">Painel</p>
         <span className="text-[96px]">{currentPassword}</span>
       </div>
@@ -91,19 +97,19 @@ export default function AdminPage(props) {
             disabled={isLoading}
             onClick={() => handleChamarProximo(-1)}
           >
-            Chamar Anterior
+            {isLoading ? "Chamando..." : "Chamar Anterior"}
           </button>
           <button className="disabled:bg-indigo-600 p-2 bg-indigo-800 rounded hover:bg-indigo-900 text-1xl hover:text-indigo-300 w-36"
             disabled={isLoading}
             onClick={handleChamarAtual}
           >
-            Chamar Atual
+            {isLoading ? "Chamando..." : "Chamar Atual"}
           </button>
           <button className="disabled:bg-indigo-600 p-2 bg-indigo-800 rounded hover:bg-indigo-900 text-1xl hover:text-indigo-300 w-36"
             disabled={isLoading}
             onClick={() => handleChamarProximo(1)}
           >
-            Chamar Próximo
+            {isLoading ? "Chamando..." : "Chamar Próximo"}
           </button>
         </div>
       </div >

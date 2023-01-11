@@ -15,13 +15,13 @@ export default function Senha() {
       console.log(data);
       let win = window.open();
       win.document.write('<html><head><title>Print it!</title></head><body style="margin: 0; display: flex;">');
-      win.document.write(`<h1 style="font-size: 120px; text-align: center; margin: auto;">${data.id}<h1>`);
+      win.document.write(`<h1 style="font-size: 120px; text-align: center; margin: 0 auto; margin-bottom: auto;">${data.id}<h1>`);
       win.document.write('</body></html>');
       win.print();
       win.close();
       setTimeout(() => {
         setIsLoading(false);
-      }, 3000);
+      }, 2000);
 
     } catch (error) {
       console.log(error);
