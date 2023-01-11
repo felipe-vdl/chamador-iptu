@@ -8,7 +8,7 @@ export default async function Counter(req, res) {
 
   if (req.method === "POST") {
     const updatedCounter = await prisma.counter.update({ where: { id: 1 }, data: { counter: { increment: 1 } } });
-    return res.status(200).json({ counter: currentCounter.counter });
+    return res.status(200).json({ counter: updatedCounter.counter });
   }
 
 }

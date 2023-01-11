@@ -36,7 +36,7 @@ export default function HomePage(props) {
   }, []);
 
   return (
-    <div className="m-auto bg-indigo-300 rounded min-w-[55%] p-8 border border-8 border-indigo-800 text-center text-slate-800 font-bold text-[256px]">
+    <div className="m-auto bg-indigo-300 rounded min-w-[55%] p-8 border-8 border-indigo-800 text-center text-slate-800 font-bold text-[256px]">
       {currentPassword}
     </div>
   );
