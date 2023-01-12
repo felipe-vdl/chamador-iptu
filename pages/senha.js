@@ -23,10 +23,10 @@ export default function Senha() {
       const locale = 'pt-br';
 
       let win = window.open();
-      win.document.write('<html><head><title>Print it!</title></head><body style="margin: 0; display: flex; flex-direction: column;">');
-      win.document.write(`<p style="font-size: 12px; text-align: center; margin: 0 auto; margin-bottom: auto;">${new Date(data.createdAt).toLocaleDateString(locale, option)}<p>`);
-      win.document.write(`<h1 style="font-size: 120px; text-align: center; margin: 0 auto; margin-bottom: auto;">${data.id}<h1>`);
-      win.document.write(`<p style="font-size: 12px; font-weight: normal; text-align: center; margin: 0 auto; margin-top: auto;">Retire o seu IPTU também pelo WhatsApp: (21) 99529-1297<p>`);
+      win.document.write('<html><head><title>Senha</title></head><body style="line-height: 3.5rem; margin: 0; padding: 0; display: flex; flex-direction: column; justify-content: flex-start;">');
+      win.document.write(`<p style="font-size: 12px; text-align: center; margin: 0; padding: 0;">${new Date(data.createdAt).toLocaleDateString(locale, option)}<p>`);
+      win.document.write(`<h1 style="font-size: 120px; text-align: center; margin: 0; padding: 0;">${data.id}<h1>`);
+      win.document.write(`<p style="font-size: 12px; font-weight: normal; text-align: center; margin: 0; padding: 0;">Retire o seu IPTU também pelo WhatsApp: (21) 99529-1297<p>`);
       win.document.write('</body></html>');
       win.print();
       win.close();
