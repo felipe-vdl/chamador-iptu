@@ -1,7 +1,7 @@
 import prisma from '../db';
 import { useState, useEffect } from 'react';
+import mainLogo from "../public/logo.png";
 let first = true;
-
 
 export default function HomePage(props) {
   const [currentPassword, setCurrentPassword] = useState(props.currentPassword.password);
@@ -41,8 +41,13 @@ export default function HomePage(props) {
   }, []);
 
   return (
-    <div className="m-auto bg-blue-300 rounded min-w-[55%] p-8 border-8 border-indigo-800 text-center text-slate-800 font-bold text-[256px]">
-      {currentPassword}
+    <div className='flex flex-col h-screen'>
+      <img src={mainLogo.src} className="self-center sm:self-center md:self-start mb-3 mt-5 ml-5 w-[250px]" />
+      <h2 className='text-center text-xl mt-auto'>Chamada</h2>
+      <div className="m-auto mb-3 mt-3 bg-blue-300 rounded w-[95%] p-8 border-8 border-indigo-800 text-center text-slate-800 font-bold text-[220px]">
+        {currentPassword}
+      </div>
+      <footer className='mt-auto bg-indigo-800 p-1 text-indigo-200 text-white text-xs text-center'>2023 © Tecnologia da Informação — Prefeitura Municipal de Mesquita</footer>
     </div>
   );
 }

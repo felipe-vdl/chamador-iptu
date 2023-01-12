@@ -30,14 +30,15 @@ export default function Senha() {
   }
 
   return (
-    <div className="m-auto">
+    <div className="m-auto flex flex-col items-center gap-4">
+      <h1 className='text-xl'>Clique no botão para imprimir uma senha</h1>
       <button
         to={`/senha`}
         onClick={handleGerarSenha}
-        className="text-white font-bold disabled:bg-indigo-300 disabled:text-slate-100 p-2 bg-indigo-800 rounded hover:bg-blue-900 text-1xl hover:text-blue-100"
+        className="text-white font-bold disabled:bg-indigo-300 disabled:text-slate-100 p-2 bg-indigo-800 rounded hover:bg-blue-900 text-[86px] px-8 hover:text-blue-100"
         disabled={isLoading}
       >
-        {!isLoading ? "Imprimir Nova Senha" : "Imprimindo..."}
+        {!isLoading ? "Imprimir" : "Imprimindo..."}
       </button>
     </div>
   );
