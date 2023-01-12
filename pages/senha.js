@@ -23,6 +23,8 @@ export default function Senha() {
       const locale = 'pt-br';
 
       let win = window.open();
+      win.blur();
+      window.focus();
       win.document.write('<html><head><title>Senha</title></head><body style="line-height: 3.5rem; margin: 0; padding: 0; display: flex; flex-direction: column; justify-content: flex-start;">');
       win.document.write(`<p style="font-size: 12px; text-align: center; margin: 0; padding: 0;">${new Date(data.createdAt).toLocaleDateString(locale, option)}<p>`);
       win.document.write(`<h1 style="font-size: 120px; text-align: center; margin: 0; padding: 0;">${data.id}<h1>`);
