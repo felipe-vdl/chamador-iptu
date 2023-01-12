@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import prisma from '../db';
+import mainLogo from "../public/logo.png";
 let first = true;
 
 export default function AdminPage(props) {
@@ -89,26 +90,27 @@ export default function AdminPage(props) {
   }
 
   return (
-    <div className="flex flex-col gap-12 m-auto">
-      <div className="m-auto bg-blue-300 rounded p-8 border-8 border-indigo-800 text-center text-slate-800 font-bold">
+    <div className="flex flex-col h-screen">
+      <img src={mainLogo.src} className="self-center sm:self-center md:self-start mb-3 mt-5 ml-5 w-[250px]" />
+      <div className="shadow-md shadow-blue-800 m-auto bg-blue-300 rounded p-8 border-8 border-indigo-800 text-center text-slate-800 font-bold">
         <p className="text-3xl">Painel</p>
         <span className="text-[96px]">{currentPassword}</span>
       </div>
-      <div className="flex flex-col text-white gap-8">
+      <div className="flex flex-col text-white gap-8 mx-auto px-4">
         <div className="flex gap-8">
-          <button className="text-white font-bold disabled:bg-indigo-300 disabled:text-slate-100 p-2 bg-indigo-800 rounded hover:bg-blue-900 text-1xl hover:text-blue-100 w-36"
+          <button className="shadow-lg shadow-indigo-500 hover:shadow-indigo-600 self-center text-white mb-auto font-bold hover:shadow-blue-500 disabled:bg-indigo-300 disabled:text-slate-100 active:bg-blue-700 p-2 bg-indigo-800 rounded hover:scale-105 transition hover:bg-blue-900 px-8 hover:text-blue-100"
             disabled={isLoading}
             onClick={() => handleChamarProximo(-1)}
           >
             {isLoading ? "Chamando..." : "Chamar Anterior"}
           </button>
-          <button className="text-white font-bold disabled:bg-indigo-300 disabled:text-slate-100 p-2 bg-indigo-800 rounded hover:bg-blue-900 text-1xl hover:text-blue-100 w-36"
+          <button className="shadow-lg shadow-indigo-500 hover:shadow-indigo-600 self-center text-white mb-auto font-bold hover:shadow-blue-500 disabled:bg-indigo-300 disabled:text-slate-100 active:bg-blue-700 p-2 bg-indigo-800 rounded hover:scale-105 transition hover:bg-blue-900 px-8 hover:text-blue-100"
             disabled={isLoading}
             onClick={handleChamarAtual}
           >
             {isLoading ? "Chamando..." : "Chamar Atual"}
           </button>
-          <button className="text-white font-bold disabled:bg-indigo-300 disabled:text-slate-100 p-2 bg-indigo-800 rounded hover:bg-blue-900 text-1xl hover:text-blue-100 w-36"
+          <button className="shadow-lg shadow-indigo-500 hover:shadow-indigo-600 self-center text-white mb-auto font-bold hover:shadow-blue-500 disabled:bg-indigo-300 disabled:text-slate-100 active:bg-blue-700 p-2 bg-indigo-800 rounded hover:scale-105 transition hover:bg-blue-900 px-8 hover:text-blue-100"
             disabled={isLoading}
             onClick={() => handleChamarProximo(1)}
           >
@@ -116,6 +118,7 @@ export default function AdminPage(props) {
           </button>
         </div>
       </div >
+      <footer className='mt-auto bg-indigo-800 p-1 text-indigo-200 text-white text-xs text-center'>2023 © Subsecretaria de Tecnologia da Informação — Prefeitura Municipal de Mesquita</footer>
     </div>
   )
 }
