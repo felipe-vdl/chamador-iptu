@@ -47,7 +47,7 @@ export default function HomePage(props) {
       <div className="m-auto mb-3 mt-3 bg-blue-300 rounded w-[95%] p-8 border-8 border-indigo-800 text-center text-slate-800 font-bold text-[220px]">
         {currentPassword}
       </div>
-      <footer className='mt-auto bg-indigo-800 p-1 text-indigo-200 text-white text-xs text-center'>2023 © Tecnologia da Informação — Prefeitura Municipal de Mesquita</footer>
+      <footer className='mt-auto bg-indigo-800 p-1 text-indigo-200 text-white text-xs text-center'>2023 © Subsecretaria de Tecnologia da Informação — Prefeitura Municipal de Mesquita</footer>
     </div>
   );
 }
