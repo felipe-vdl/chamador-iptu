@@ -90,25 +90,25 @@ export default function AdminPage(props) {
 
   return (
     <div className="flex flex-col gap-12 m-auto">
-      <div className="m-auto bg-indigo-300 rounded p-8 border-8 border-indigo-800 text-center text-slate-800 font-bold">
+      <div className="m-auto bg-blue-300 rounded p-8 border-8 border-indigo-800 text-center text-slate-800 font-bold">
         <p className="text-3xl">Painel</p>
         <span className="text-[96px]">{currentPassword}</span>
       </div>
       <div className="flex flex-col text-white gap-8">
         <div className="flex gap-8">
-          <button className="disabled:bg-indigo-600 p-2 bg-indigo-800 rounded hover:bg-indigo-900 text-1xl hover:text-indigo-300 w-36"
+          <button className="text-white font-bold disabled:bg-indigo-300 disabled:text-slate-100 p-2 bg-indigo-800 rounded hover:bg-blue-900 text-1xl hover:text-blue-100 w-36"
             disabled={isLoading}
             onClick={() => handleChamarProximo(-1)}
           >
             {isLoading ? "Chamando..." : "Chamar Anterior"}
           </button>
-          <button className="disabled:bg-indigo-600 p-2 bg-indigo-800 rounded hover:bg-indigo-900 text-1xl hover:text-indigo-300 w-36"
+          <button className="text-white font-bold disabled:bg-indigo-300 disabled:text-slate-100 p-2 bg-indigo-800 rounded hover:bg-blue-900 text-1xl hover:text-blue-100 w-36"
             disabled={isLoading}
             onClick={handleChamarAtual}
           >
             {isLoading ? "Chamando..." : "Chamar Atual"}
           </button>
-          <button className="disabled:bg-indigo-600 p-2 bg-indigo-800 rounded hover:bg-indigo-900 text-1xl hover:text-indigo-300 w-36"
+          <button className="text-white font-bold disabled:bg-indigo-300 disabled:text-slate-100 p-2 bg-indigo-800 rounded hover:bg-blue-900 text-1xl hover:text-blue-100 w-36"
             disabled={isLoading}
             onClick={() => handleChamarProximo(1)}
           >

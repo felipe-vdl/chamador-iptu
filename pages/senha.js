@@ -34,7 +34,7 @@ export default function Senha() {
       <button
         to={`/senha`}
         onClick={handleGerarSenha}
-        className="text-white font-bold disabled:bg-indigo-600 p-2 bg-indigo-800 rounded hover:bg-indigo-900 text-1xl hover:text-indigo-300"
+        className="text-white font-bold disabled:bg-indigo-300 disabled:text-slate-100 p-2 bg-indigo-800 rounded hover:bg-blue-900 text-1xl hover:text-blue-100"
         disabled={isLoading}
       >
         {!isLoading ? "Imprimir Nova Senha" : "Imprimindo..."}
