@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import mainLogo from "../public/logo.png";
 
 export default function Senha() {
   const [isLoading, setIsLoading] = useState(false);
@@ -30,16 +31,18 @@ export default function Senha() {
   }
 
   return (
-    <div className="m-auto flex flex-col items-center gap-4">
-      <h1 className='text-xl'>Clique no botão para imprimir uma senha</h1>
+    <div className='flex flex-col h-screen'>
+      <img src={mainLogo.src} className="self-center sm:self-center md:self-start mb-3 mt-5 ml-5 w-[250px]" />
+      <h1 className='text-3xl mt-auto mb-5 text-center'>Clique no botão para imprimir uma senha</h1>
       <button
         to={`/senha`}
         onClick={handleGerarSenha}
-        className="text-white font-bold disabled:bg-indigo-300 disabled:text-slate-100 p-2 bg-indigo-800 rounded hover:bg-blue-900 text-[86px] px-8 hover:text-blue-100"
+        className="self-center text-white mb-auto font-bold disabled:bg-indigo-300 disabled:text-slate-100 p-2 bg-indigo-800 rounded hover:bg-blue-900 text-[86px] px-8 hover:text-blue-100"
         disabled={isLoading}
       >
         {!isLoading ? "Imprimir" : "Imprimindo..."}
       </button>
+      <footer className='mt-auto bg-indigo-800 p-1 text-indigo-200 text-white text-xs text-center'>2023 © Subsecretaria de Tecnologia da Informação — Prefeitura Municipal de Mesquita</footer>
     </div>
   );
 }
