@@ -1,3 +1,5 @@
+import prisma from "../../db";
+
 export default async function ChamarProximo(req, res) {
   const { nextId, currentId } = req.body;
 

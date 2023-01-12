@@ -1,4 +1,5 @@
 import prisma from "../../db";
+
 export default async function Reset(req, res) {
   const updatedPassword = await prisma.currentPassword.update({
     where: { id: 1 },

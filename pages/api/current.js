@@ -1,3 +1,5 @@
+import prisma from "../../db";
+
 export default async function Current(req, res) {
   const current = await prisma.currentPassword.findUnique({
     where: { id: 1 }
