@@ -13,10 +13,20 @@ export default function Senha() {
       }
 
       const data = await response.json();
-      console.log(data);
+      const option = {
+        year: 'numeric',
+        month: ('numeric'),
+        day: 'numeric',
+        hour: 'numeric',
+        minute: 'numeric',
+      }
+      const locale = 'pt-br';
+
       let win = window.open();
-      win.document.write('<html><head><title>Print it!</title></head><body style="margin: 0; display: flex;">');
+      win.document.write('<html><head><title>Print it!</title></head><body style="margin: 0; display: flex; flex-direction: column;">');
+      win.document.write(`<p style="font-size: 12px; text-align: center; margin: 0 auto; margin-bottom: auto;">${new Date(data.createdAt).toLocaleDateString(locale, option)}<p>`);
       win.document.write(`<h1 style="font-size: 120px; text-align: center; margin: 0 auto; margin-bottom: auto;">${data.id}<h1>`);
+      win.document.write(`<p style="font-size: 12px; font-weight: normal; text-align: center; margin: 0 auto; margin-top: auto;">Retire o seu IPTU também pelo WhatsApp: (21) 99529-1297<p>`);
       win.document.write('</body></html>');
       win.print();
       win.close();
