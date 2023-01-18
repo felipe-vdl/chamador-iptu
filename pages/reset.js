@@ -8,7 +8,6 @@ export default function ResetPage() {
     try {
       setIsLoading(true);
       const response = await fetch('/api/reset');
-      setCurrentPassword(1);
       setTimeout(() => {
         setIsLoading(false);
       }, 2000);
