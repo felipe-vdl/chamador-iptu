@@ -12,6 +12,9 @@ export default function ResetPage() {
         setIsLoading(false);
       }, 2000);
 
+      const data = await response.json();
+      console.log(data);
+
     } catch (error) {
       console.log(error);
       setTimeout(() => {
