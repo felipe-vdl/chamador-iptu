@@ -1,5 +1,5 @@
 -- CreateTable
-CREATE TABLE `password` (
+CREATE TABLE `Password` (
     `id` INTEGER NOT NULL AUTO_INCREMENT,
     `createdAt` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
 
@@ -7,7 +7,7 @@ CREATE TABLE `password` (
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 -- CreateTable
-CREATE TABLE `totalpasswords` (
+CREATE TABLE `TotalPasswords` (
     `id` INTEGER NOT NULL DEFAULT 1,
     `count` INTEGER NOT NULL DEFAULT 1,
     `createdAt` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
@@ -17,7 +17,7 @@ CREATE TABLE `totalpasswords` (
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 -- CreateTable
-CREATE TABLE `currentpassword` (
+CREATE TABLE `CurrentPassword` (
     `id` INTEGER NOT NULL DEFAULT 1,
     `password` INTEGER NOT NULL DEFAULT 1,
     `createdAt` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
@@ -27,7 +27,7 @@ CREATE TABLE `currentpassword` (
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 -- CreateTable
-CREATE TABLE `counter` (
+CREATE TABLE `Counter` (
     `id` INTEGER NOT NULL DEFAULT 1,
     `counter` INTEGER NOT NULL DEFAULT 1,
     `createdAt` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),

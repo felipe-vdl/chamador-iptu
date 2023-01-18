@@ -14,7 +14,7 @@ model Password {
   id        Int @id @default(autoincrement())
   createdAt DateTime  @default(now())
 
-  @@map("password")
+  @@map("passwords")
 }
 
 model TotalPasswords {
@@ -23,7 +23,7 @@ model TotalPasswords {
   createdAt DateTime @default(now())
   updatedAt DateTime? @updatedAt
 
-  @@map("totalpasswords")
+  @@map("total_passwords")
 }
 
 model CurrentPassword {
@@ -32,7 +32,7 @@ model CurrentPassword {
   createdAt DateTime  @default(now())
   updatedAt DateTime? @updatedAt
 
-  @@map("currentpassword")
+  @@map("current_password")
 }
 
 model Counter {
