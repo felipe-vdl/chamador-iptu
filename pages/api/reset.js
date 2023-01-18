@@ -8,7 +8,7 @@ export default async function Reset(req, res) {
     });
   
     await prisma.password.deleteMany({});
-    await prisma.$queryRaw`TRUNCATE TABLE password;`;
+    await prisma.$queryRaw`TRUNCATE TABLE passwords;`;
   
     res.status(200).json({ id: 1 });
     
